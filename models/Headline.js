@@ -16,20 +16,20 @@ var headlineSchema = new Schema({
     unique: true 
   },
   // image, a string, must be entered
-  image:{
-    type: String,
-    required: true
-  },
+  // image:{
+  //   type: String,
+  //   required: true
+  // },
   // summary, a string, must be entered
   summary: {
     type: String,
     required: true
   },
   // url, a string, must be entered
-  url: {
-    type: String,
-    required: true
-  },
+  // url: {
+  //   type: String,
+  //   required: true
+  // },
   // date is just a string
   date: {
     type: Date,

@@ -11,10 +11,10 @@ var PORT = process.env.PORT || 3000;
 var app = express();
 
 //set up an Express Router
-require("./config/routes")(router);
 
 // Require our routes
 var router = express.Router();
+require("./config/routes")(router);
 // var routes = require("./routes");
 
 //static
@@ -47,7 +47,7 @@ mongoose.connect(MONGODB_URI, function(error){
 app.use(bodyParser.urlencoded({extended: false}));
 
 // Have every request go through our route middleware
-app.use(routes);
+app.use(router);
 
 // Listen on the port
 app.listen(PORT, function() {

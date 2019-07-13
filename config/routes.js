@@ -28,7 +28,7 @@ module.exports = function(router){
         if (req.query.saved){
             query = req.query;
         }
-        headlinesController.get(query, function(date){
+        headlinesController.get(query, function(data){
             res.json(data);
         });
     });

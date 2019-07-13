@@ -18,7 +18,7 @@ html {
 	width: 100%;
 	height: 80px;
 	color: white;
-	background-color: #2196f3;
+	background-color: #0a288d;
   }
   
   .navbar {
@@ -123,7 +123,7 @@ html {
 	padding-left: 10px;
 	margin: 0;
 	font-weight: 800;
-	background: #0c7cd5;
+	background: #4ba2e9;
   }
   
   .navbar-nav > li > a.scrape-new,
@@ -143,7 +143,13 @@ html {
   .navbar-nav > li > a.scrape-new:active {
 	background: #e51c23;
   }
-  
+  .navbar-inverse .navbar-nav>li>a.scrape-new:hover{
+	  background: #4caf50;
+  }
+  .navbar-inverse .navbar-nav>li>a.scrape-new:active{
+	  background:#e51c23;
+  }
+
   .scrape-new {
 	cursor: pointer;
   }
@@ -162,9 +168,16 @@ html {
 	float: right;
 	margin: 5px;
   }
+  .note.list-group-item{
+	  padding: 30px;
+  }
   
   .note.list-group-item .btn {
 	position: relative;
 	bottom: 10px;
   }
-  
+  .panel{
+	  border-radius:0;
+	  box-shadow: #2196F3;
+  }
+ 
