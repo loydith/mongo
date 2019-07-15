@@ -5,7 +5,7 @@
 '''
 
 '''
-# Instruccions
+# Installation Instructions
 '''
 1. Create {name} a repo and clone the {name} repo to your computer. 
 2. Install init and the node.js, npm dependencies from the package.json file:
