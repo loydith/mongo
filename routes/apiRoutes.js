@@ -1,12 +1,13 @@
 const axios = require('axios');
 const cheerio = require("cheerio");
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
+
 // Require all models
 const db = require("../models");
 
 // Connect to the Mongo DB
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+// mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 module.exports = function (app) {
   // home page
