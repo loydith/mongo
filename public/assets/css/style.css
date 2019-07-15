@@ -1,183 +1,169 @@
 html {
-	position: relative;
-	min-height: 100%;
+    position: relative;
+    min-height: 100%;
   }
   
   body {
-	margin-bottom: 80px;
-	background-image: url("../images/newspaper.jpg");
+    margin-bottom: 80px;
+    background-image: url("../images/newspaper.jpeg");
   }
   
   .card a:not([href]):not([tabindex]).scrape-new {
-	color: #2196F3;
+    color: #2196F3;
   }
   
   .footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 80px;
-	color: white;
-	background-color: #0a288d;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    color: white;
+    background-color: #2196f3;
   }
   
   .navbar {
-	margin-bottom: 0;
+    margin-bottom: 0;
   }
   
   .jumbotron {
-	position: relative;
-	width: 100%;
-	height: 500px;
-	padding: 0;
-	font-family: "Cormorant SC";
-	box-shadow: 10px 5px 20px 2px lightslategrey;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    padding: 0;
+    font-family: "Cormorant SC";
+    box-shadow: 10px 5px 20px 2px lightslategrey;
   }
   
   .jumbotron .overlay {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: auto;
-	background: linear-gradient(#333, black);
-	opacity: 0.7;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: auto;
+    background: linear-gradient(#333, black);
+    opacity: 0.7;
   }
   
   .jumbotron .background-image {
-	height: 100%;
-	background-image: url("../images/modals.jpeg");
-	background-size: cover;
+    height: 100%;
+    background-image: url("../images/news-banner.jpg");
+    background-size: cover;
   }
   
   .jumbotron .caption {
-	position: absolute;
-	top: 30%;
-	width: 100%;
-	text-align: center;
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    text-align: center;
   }
   
   .jumbotron .caption h1,
   .jumbotron .caption p {
-	color: white;
+    color: white;
   }
   
   .jumbotron h1 {
-	font-size: 80px;
-	font-weight: 800;
+    font-size: 80px;
+    font-weight: 800;
   }
   
   .jumbotron p {
-	font-size: 30px;
+    font-size: 30px;
   }
   
   .article-container {
-	padding-bottom: 25px;
+    padding-bottom: 25px;
   }
   
   .card {
-	border-radius: 0;
-	box-shadow: 3px 3px 20px lightslategrey;
-	margin: 20px 0;
+    border-radius: 0;
+    box-shadow: 3px 3px 20px lightslategrey;
+    margin: 20px 0;
   }
   
   .card .card-header {
-	background-color: #2196f3;
-	position: relative;
-	padding-top: 30px;
-	padding-bottom: 30px;
+    background-color: #2196f3;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   
   .card .card-header h3 {
-	color: white;
+    color: white;
   }
   
   .card .card-header .btn {
-	position: absolute;
-	top: 20px;
-	right: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
   }
   
   .card .card-header .btn.delete {
-	right: 160px;
+    right: 160px;
   }
   
   .card .card-body {
-	font-size: 16px;
+    font-size: 16px;
   }
   
   .card .card-header .article-link {
-	color: white;
-	display: inline-block;
-	width: 80%;
+    color: white;
+    display: inline-block;
+    width: 80%;
   }
   
   .footer > .container > p {
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	padding: 5px;
-	padding-bottom: 5px;
-	padding-left: 10px;
-	margin: 0;
-	font-weight: 800;
-	background: #4ba2e9;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    margin: 0;
+    font-weight: 800;
+    background: #0c7cd5;
   }
   
   .navbar-nav > li > a.scrape-new,
   .navbar-nav > li > a.clear {
-	padding: 10px;
-	margin-top: 10px;
-	margin-left: 10px;
-	font-weight: 800;
-	color: white;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-weight: 800;
+    color: white;
   }
   
   .navbar-nav > li > a.scrape-new:hover,
   .navbar-nav > li > a.clear:hover {
-	background: #4caf50;
+    background: #4caf50;
   }
   
   .navbar-nav > li > a.scrape-new:active {
-	background: #e51c23;
+    background: #e51c23;
   }
-  .navbar-inverse .navbar-nav>li>a.scrape-new:hover{
-	  background: #4caf50;
-  }
-  .navbar-inverse .navbar-nav>li>a.scrape-new:active{
-	  background:#e51c23;
-  }
-
+  
   .scrape-new {
-	cursor: pointer;
+    cursor: pointer;
   }
   
   .m-top-80 {
-	margin-top: 80px;
+    margin-top: 80px;
   }
   
   textarea {
-	padding: 10px;
-	resize: none;
-	width: 100%;
+    padding: 10px;
+    resize: none;
+    width: 100%;
   }
   
   .bootbox-body .btn {
-	float: right;
-	margin: 5px;
-  }
-  .note.list-group-item{
-	  padding: 30px;
+    float: right;
+    margin: 5px;
   }
   
   .note.list-group-item .btn {
-	position: relative;
-	bottom: 10px;
+    position: relative;
+    bottom: 10px;
   }
-  .panel{
-	  border-radius:0;
-	  box-shadow: #2196F3;
-  }
- 

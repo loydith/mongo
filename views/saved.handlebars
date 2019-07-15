@@ -1,40 +1,21 @@
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-     <div class="navbar-header">
-      <a class="navbar-brand" href="/">Saved Articles</a>
-  </div>
-    <ul class="nav navbar-nav">
-      <li><a href="/">Home</a></li>
-      <li class="active"><a href="/saved">Saved Articles</a></li>
-      {{!-- <li><a class="btn btn-danger scrape-new">SCRAPE NEW ARTICLES!</a></li> --}}
-      {{!-- <li><a class="btn btn-danger clear">CLEAR ARTICLES!</a></li> --}}
-    </ul>
-  </div>
-</nav>
+{{> header }}
 
-<div class="jumbotron text-center">
-  <div class="overlay">
-  </div>
-  <div class="background-image">
-  </div>
-  <div class="caption">
-    <h1>Saved Articles</h1>
-    <p>Your Saved Articles</p>
-  </div>
-</div>
-<div class="container-fluid article-container"></div>
-  {{!-- ///////////// --}}
-  {{#each articles}}
-  <div data-_id="{{this._id}}" class="card">
-    <div class="card-header">
-      <h3>
-        <a class="article-link" target="_blank" rel="noopener noreferrer" href="{{this.url}}">{{this.headline}}</a>
-        <a class="btn btn-success save">Save Article</a>
-      </h3>
+<div class="container-fluid article-container">
+{{#if article}}
+  {{#each article}}
+      <div data-_id={{this._id}} class="card">
+      <div class="card-header">
+        <h3>
+          <a class="article-link" target="_blank" rel="noopener noreferrer" href={{this.url}}>{{this.headline}}</a>
+          <a class="btn btn-danger delete">Delete From Saved</a>
+          <a class="btn btn-info notes">Article Notes</a>
+        </h3>
+      </div>
+      <div class="card-body">{{this.summary}}</div>
     </div>
-    <div class="card-body">{{this.summary}}</div>
-  </div>
-  {{/each}} {{#unless articles.length}}
+  {{/each}}
+</div>
+{{else}}
   <div class='alert alert-warning text-center'>
     <h4>Uh Oh. Looks like we don't have any new articles.</h4>
   </div>
@@ -51,16 +32,11 @@
       </h4>
     </div>
   </div>
-  {{/unless}}
-</div>
+{{/if}}
 
-<footer class="footer">
-  <div class="container">
-    <p>New Science Mongo Scraper</p>
-  </div>
-</footer>
+{{> footer }}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
-<script src="../../assets/javascript/index.js"></script>
+<script src="/assets/javascript/saved.js"></script>
