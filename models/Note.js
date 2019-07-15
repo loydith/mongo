@@ -1,7 +1,4 @@
-
-// Require mongoose
 var mongoose = require("mongoose");
-// Create the schema class using mongoose's schema method
 var Schema = mongoose.Schema;
 
 // Create the noteSchema with the schema object
@@ -12,11 +9,7 @@ var noteSchema = new Schema({
     ref: "Headline"
   },
   // date is just a string
-  date: {
-    type: Date,
-    default: Date.now
-  },
-  // as is the noteText
+  date: String,
   noteText: String
 });
 

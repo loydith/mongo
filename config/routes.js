@@ -32,6 +32,7 @@ module.exports = function(router){
             res.json(data);
         });
     });
+    //delete a specific article
     router.delete("/api/headlines/:id", function(req, res){
         var query = {};
         query._id = req.params.id;
@@ -39,11 +40,13 @@ module.exports = function(router){
             res.json(data);
         });
     });
+    //update 
     router.patch("/api/headlines", function(req, res){
         headlinesController.update(req.body, function(err, data){
             res.json(data);
         });
     });
+    //grab all the notes associate with id
     router.get("/api/notes/:headline_id?", function(req, res){
         var query = {};
         if(req.params.headline_id){
@@ -53,6 +56,7 @@ module.exports = function(router){
             res.json(data);
         });
     });
+    //delete the notes
     router.delete("/api/notes/:id", function(req, res){
         var query = {};
         query._id = req.params.id;
@@ -60,6 +64,7 @@ module.exports = function(router){
             res.json(data);
         });
     });
+    //post news articles
     router.post("/api/notes", function(req, res){
         notesController.save(req.body, function(data){
             res.json(data);

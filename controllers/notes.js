@@ -1,5 +1,4 @@
-// Controller for our notes
-// ========================
+
 // var db = require("../models");
 var Note = require("../models/Note");
 var makeDate = require("../scripts/date");
@@ -27,22 +26,22 @@ module.exports = {
       }
     });
   },
-
-  // Find one note
-  find: function(req, res) {
-    db.Note.find({ _headlineId: req.params.id }).then(function(dbNote) {
-      res.json(dbNote);
-    });
-  },
-  // Create a new note
-  create: function(data, cb) {
-    Note.create({_id: data._id
-      }, cb);
-  },
   // Delete a note with a given id
   delete: function(data, cb) {
     Note.remove({ _id: data._id 
     }, cb);
-      
-  }
+  },
+
+  // Find one note
+  // find: function(req, res) {
+  //   db.Note.find({ _headlineId: req.params.id }).then(function(dbNote) {
+  //     res.json(dbNote);
+  //   });
+  // },
+  // Create a new note
+  // create: function(data, cb) {
+  //   Note.create({_id: data._id
+  //     }, cb);
+  // },
+  
 };

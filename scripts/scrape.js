@@ -1,58 +1,30 @@
-// scrape script
-// =============
 
 // Require axios and cheerio, making our scrapes possible
-var axios = require("axios");
+var request = require("request");
 var cheerio = require("cheerio");
+
 var scrape = function(cb) {
   // Scrape the NYTimes website
-  return axios.get("https://www.nytimes.com").then(function(res) {
-    var $ = cheerio.load(res.data);
-    console.log("scraping");
-    // Make an empty array to save our article info
+  request("https://www.nytimes.com", function(err, res, html) {
+    var $ = cheerio.load(html);
+  
+    // console.log("scraping");
+  
     var articles = [];
-
-    // Now, find and loop through each element that has the ".assetWrapper" class
-    // (i.e, the section holding the articles)
     $(".theme-summary").each(function(i, element) {
-      // In each article section, we grab the headline, URL, and summary
-
-      // Grab the headline of the article
       var head = $(this)
         .children(".story-heading")
         .text()
         .trim()
-        // .find(".media__body")
-        // .children(".media__headline")
-        // .children("a")
-        // .text()
-        // .trim();
-
-        // Grab the image
-      var image = $(this)
-        // .find(".media__icon")
-        // .children("a")
-        // .children("img") //cheerio doc.
-        .children(".story-heading")
-        .text()
-        .trim()
-
-      // Grab the URL of the article
-      // var url = $(this)
-      //   .find("a")
-      //   .attr("href");
-
+       
       // Grab the summary of the article
-      // var sum = $(this)
-      // .find(".media__body")
-      // .children(".media__deck")
-      // .text()
-      // .trim();
+      var sum = $(this)
+      .find(".summary")
+      .text()
+      .trim();
 
       // So long as our headline and sum and url aren't empty or undefined, do the following
       if (head && sum ) {
-        // This section uses regular expressions and the trim function to tidy our headlines and summaries
-        // We're removing extra lines, extra spacing, extra tabs, etc.. to increase to typographical cleanliness.
         var headNeat = head.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
         var sumNeat = sum.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
 
@@ -60,8 +32,6 @@ var scrape = function(cb) {
         var dataToAdd = {
           headline: headNeat,
           summary: sumNeat,
-          // image: image,
-          // url: "https://www.sciencemag.org" + url
         };
         // Push new article into articles array
         articles.push(dataToAdd);
